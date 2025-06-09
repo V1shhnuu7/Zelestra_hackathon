@@ -1,9 +1,42 @@
-# Zelestra_hackathon
+# 🌞 Solar Panel Efficiency Prediction – Hackathon Project
 
-First approach was using randomforestregressor and result is 
+This project was developed for a hackathon focused on predictive maintenance of solar panels using machine learning. The objective was to forecast efficiency degradation using sensor data.
 
-Validation MSE: 0.012000221854765427
-Custom Hackathon Score: 89.04544758798177
+---
 
+## 📁 Dataset
+- `train.csv`: 20,000 samples with 17 columns.
+- `test.csv`: 12,000 samples without target.
+- Provided by organizers; external data was prohibited.
 
-Next approach is about XGBregeresor
+## 🎯 Target Variable
+- `efficiency` – represents the final energy output efficiency of each panel.
+
+---
+
+## 📊 Features Used
+We engineered several new features:
+- `temp_diff` – temperature difference between panel and ambient.
+- `irradiance_per_humidity` – irradiance normalized by humidity.
+- `age_squared` – to model non-linear degradation.
+- `wind_pressure_ratio` – cooling effect indicator.
+- `cloud_irradiance` – cloud’s impact on irradiance.
+
+---
+
+## 🤖 Model
+- Model: **LightGBM Regressor**
+- Evaluation Metric: `100 * (1 - RMSE)`
+- Validation Score: **89.27**
+
+---
+
+## 🧠 Tools & Libraries
+- Python, Pandas, Scikit-learn, LightGBM, NumPy, Matplotlib
+
+---
+
+## 📄 Files
+- `submission_lightgbm.csv` – Prediction results
+- `model_script.py` – Model training and prediction
+- `approach.txt` – Summary of approach
